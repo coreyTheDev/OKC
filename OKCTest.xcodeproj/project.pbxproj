@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		4D49F4AA37676F5FE70D7F96 /* Pods_OKCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF7C074BD08AB5D685D13D6 /* Pods_OKCTest.framework */; };
 		7AD4BD011DB94CAB00CAA7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4BD001DB94CAB00CAA7BA /* AppDelegate.swift */; };
-		7AD4BD031DB94CAB00CAA7BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4BD021DB94CAB00CAA7BA /* ViewController.swift */; };
 		7AD4BD061DB94CAB00CAA7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4BD041DB94CAB00CAA7BA /* Main.storyboard */; };
 		7AD4BD081DB94CAB00CAA7BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4BD071DB94CAB00CAA7BA /* Assets.xcassets */; };
 		7AD4BD0B1DB94CAB00CAA7BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4BD091DB94CAB00CAA7BA /* LaunchScreen.storyboard */; };
+		7AD4BD131DB94FB100CAA7BA /* MatchesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4BD121DB94FB100CAA7BA /* MatchesCollectionViewController.swift */; };
+		7AD4BD161DB94FFF00CAA7BA /* MatchesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4BD141DB94FFF00CAA7BA /* MatchesCollectionViewCell.swift */; };
+		7AD4BD171DB94FFF00CAA7BA /* MatchesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4BD151DB94FFF00CAA7BA /* MatchesCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,11 +22,13 @@
 		58350396F03A52B90705BD79 /* Pods-OKCTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OKCTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OKCTest/Pods-OKCTest.debug.xcconfig"; sourceTree = "<group>"; };
 		7AD4BCFD1DB94CAB00CAA7BA /* OKCTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OKCTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD4BD001DB94CAB00CAA7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7AD4BD021DB94CAB00CAA7BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7AD4BD051DB94CAB00CAA7BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7AD4BD071DB94CAB00CAA7BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AD4BD0A1DB94CAB00CAA7BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AD4BD0C1DB94CAB00CAA7BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AD4BD121DB94FB100CAA7BA /* MatchesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesCollectionViewController.swift; sourceTree = "<group>"; };
+		7AD4BD141DB94FFF00CAA7BA /* MatchesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesCollectionViewCell.swift; sourceTree = "<group>"; };
+		7AD4BD151DB94FFF00CAA7BA /* MatchesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchesCollectionViewCell.xib; sourceTree = "<group>"; };
 		EA09FAB221FFFA1E1A2F3725 /* Pods-OKCTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OKCTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-OKCTest/Pods-OKCTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +74,9 @@
 			isa = PBXGroup;
 			children = (
 				7AD4BD001DB94CAB00CAA7BA /* AppDelegate.swift */,
-				7AD4BD021DB94CAB00CAA7BA /* ViewController.swift */,
+				7AD4BD121DB94FB100CAA7BA /* MatchesCollectionViewController.swift */,
+				7AD4BD141DB94FFF00CAA7BA /* MatchesCollectionViewCell.swift */,
+				7AD4BD151DB94FFF00CAA7BA /* MatchesCollectionViewCell.xib */,
 				7AD4BD041DB94CAB00CAA7BA /* Main.storyboard */,
 				7AD4BD071DB94CAB00CAA7BA /* Assets.xcassets */,
 				7AD4BD091DB94CAB00CAA7BA /* LaunchScreen.storyboard */,
@@ -153,6 +159,7 @@
 			files = (
 				7AD4BD0B1DB94CAB00CAA7BA /* LaunchScreen.storyboard in Resources */,
 				7AD4BD081DB94CAB00CAA7BA /* Assets.xcassets in Resources */,
+				7AD4BD171DB94FFF00CAA7BA /* MatchesCollectionViewCell.xib in Resources */,
 				7AD4BD061DB94CAB00CAA7BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,7 +219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AD4BD031DB94CAB00CAA7BA /* ViewController.swift in Sources */,
+				7AD4BD131DB94FB100CAA7BA /* MatchesCollectionViewController.swift in Sources */,
+				7AD4BD161DB94FFF00CAA7BA /* MatchesCollectionViewCell.swift in Sources */,
 				7AD4BD011DB94CAB00CAA7BA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

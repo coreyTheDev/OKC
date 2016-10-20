@@ -45,6 +45,8 @@ class MatchesCollectionViewController: UICollectionViewController, UICollectionV
         self.collectionView?.register(UINib(nibName:"MatchesCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
         
         self.title = "Browse"
+        let textColorDictionary: NSDictionary = [NSForegroundColorAttributeName: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = textColorDictionary as? [String : Any]
         
         self.getMatches()
     }
@@ -72,7 +74,7 @@ class MatchesCollectionViewController: UICollectionViewController, UICollectionV
         
         profileCell.usernameLabel.text = profileForCell.name!
         
-        let dotChar = "\u{F9}"
+        let dotChar = "\u{2022}"
         profileCell.locationLabel.text = "\(profileForCell.age!) \(dotChar) \(profileForCell.location!.cityName!), \(profileForCell.location!.countryCode!)"
         profileCell.percentageLabel.text = "\(profileForCell.percentageMatch!)% Match"
         

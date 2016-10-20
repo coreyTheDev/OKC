@@ -16,22 +16,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="333" height="515"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CoreyMarr" translatesAutoresizingMaskIntoConstraints="NO" id="EB8-dA-pqW">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="CoreyMarr" translatesAutoresizingMaskIntoConstraints="NO" id="EB8-dA-pqW">
                         <constraints>
                             <constraint firstAttribute="width" secondItem="EB8-dA-pqW" secondAttribute="height" multiplier="333:388" id="fsU-3a-Vae"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laughsalot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfH-yx-4A6">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laughsalot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="QfH-yx-4A6">
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                         <color key="textColor" red="0.36352055881745832" green="0.36588547267279536" blue="0.38417513602299569" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 New York, NY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRf-lO-8ub">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="28 New York, NY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="sRf-lO-8ub">
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                         <color key="textColor" red="0.46274509800000002" green="0.46666666670000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="74% Match" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhk-Gw-uBj">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="74% Match" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Vhk-Gw-uBj">
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.3635205588" green="0.36588547269999999" blue="0.38417513599999997" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -41,6 +41,7 @@
             <constraints>
                 <constraint firstItem="Vhk-Gw-uBj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="74c-ck-5G5"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QfH-yx-4A6" secondAttribute="trailing" constant="15" id="AG0-4c-Ad3"/>
+                <constraint firstAttribute="bottom" secondItem="Vhk-Gw-uBj" secondAttribute="bottom" constant="25" id="Jld-Xk-kho"/>
                 <constraint firstItem="sRf-lO-8ub" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Tbu-3p-OZu"/>
                 <constraint firstAttribute="trailing" secondItem="EB8-dA-pqW" secondAttribute="trailing" id="WY4-GJ-049"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sRf-lO-8ub" secondAttribute="trailing" constant="15" id="Wxf-5o-cwP"/>

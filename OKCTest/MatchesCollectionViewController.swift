@@ -63,7 +63,7 @@ class MatchesCollectionViewController: UICollectionViewController, UICollectionV
     
     //MARK: UICollectionViewFlowLayout Methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let widthofCell = collectionView.frame.size.width - CGFloat(3 * margin)
+        let widthofCell = (collectionView.frame.size.width - CGFloat(3 * margin))/2
         let heightOfCell = cellAspectRatio * widthofCell
         return CGSize(width: widthofCell, height: heightOfCell)
     }

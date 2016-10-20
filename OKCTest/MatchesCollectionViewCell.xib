@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,11 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="166" height="294"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="CoreyMarr" translatesAutoresizingMaskIntoConstraints="NO" id="EB8-dA-pqW">
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="EB8-dA-pqW" secondAttribute="height" multiplier="333:388" id="fsU-3a-Vae"/>
-                        </constraints>
-                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="CoreyMarr" translatesAutoresizingMaskIntoConstraints="NO" id="EB8-dA-pqW"/>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ycl-UI-813">
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Laughsalot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfH-yx-4A6">
@@ -53,9 +48,8 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sRf-lO-8ub" secondAttribute="trailing" constant="10" id="7Xa-T3-Ta6"/>
                             <constraint firstItem="Vhk-Gw-uBj" firstAttribute="top" secondItem="sRf-lO-8ub" secondAttribute="bottom" constant="9" id="Fqt-2P-orW"/>
                             <constraint firstItem="sRf-lO-8ub" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ycl-UI-813" secondAttribute="leading" constant="10" id="Hwb-qZ-bc1"/>
-                            <constraint firstAttribute="height" constant="100" id="N2H-ku-HfI"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="99" id="N2H-ku-HfI"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QfH-yx-4A6" secondAttribute="trailing" constant="10" id="OFa-QN-tQL"/>
-                            <constraint firstAttribute="bottom" secondItem="Vhk-Gw-uBj" secondAttribute="bottom" constant="15" id="Z4d-og-6dr"/>
                             <constraint firstItem="sRf-lO-8ub" firstAttribute="centerX" secondItem="Ycl-UI-813" secondAttribute="centerX" id="aL9-ck-mzX"/>
                             <constraint firstItem="QfH-yx-4A6" firstAttribute="top" secondItem="Ycl-UI-813" secondAttribute="top" constant="15" id="b3b-vs-Zhq"/>
                             <constraint firstItem="sRf-lO-8ub" firstAttribute="top" secondItem="QfH-yx-4A6" secondAttribute="bottom" constant="4" id="cRX-er-iTl"/>

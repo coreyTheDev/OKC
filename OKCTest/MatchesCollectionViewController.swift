@@ -7,40 +7,47 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 private let reuseIdentifier = "MatchesCollectionViewCell"
 private let margin = 13.0
 private let cellAspectRatio = CGFloat(515.0/333.0)
 
-class MatchesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+struct Image {
+    var originalURL:String?
+    var smallURL:String?
+    var mediumURL:String?
+    var largeURL:String?
+}
+struct Location{
+    var countryName:String?
+    var countryCode:String?
+    var cityName:String?
+    var stateName:String?
+    var stateCode:String?
+}
+struct Match {
+    var name:String?
+    var location:Location?
+    var age:Int?
+    var image:Image?
+    
+}
 
+class MatchesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    var matchesArray:[Match] = [Match]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
 
         self.collectionView?.register(UINib(nibName:"MatchesCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
         
         self.title = "Browse"
+        
+        self.getMatches()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -50,7 +57,7 @@ class MatchesCollectionViewController: UICollectionViewController, UICollectionV
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.matchesArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -67,38 +74,33 @@ class MatchesCollectionViewController: UICollectionViewController, UICollectionV
         let heightOfCell = cellAspectRatio * widthofCell
         return CGSize(width: widthofCell, height: heightOfCell)
     }
-    
 
-    
-    // MARK: UICollectionViewDelegate
+    //MARK: Networking methods
+    func getMatches(){
+        
+        let matchURLString = "https://www.okcupid.com/matchSample.json"
+        
+        Alamofire.request(matchURLString).responseJSON { response in
 
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
+            let jsonData = JSON(response.result.value)
+            let responseJSONArray = jsonData["data"]
+            
+            for (_, subJSON): (String, JSON) in responseJSONArray {
+                
+                //grab image from JSON
+                let photoJSON = subJSON["photo"]["full_paths"]
+                let profileImage = Image(originalURL: photoJSON["original"].string, smallURL: photoJSON["small"].string, mediumURL: photoJSON["medium"].string, largeURL: photoJSON["large"].string)
+                
+                //grab location from JSON
+                let locationJSON = subJSON["location"]
+                let location = Location(countryName: locationJSON["country_name"].string, countryCode: locationJSON["country_code"].string, cityName: locationJSON["city_name"].string, stateName: locationJSON["state_name"].string, stateCode: locationJSON["state_code"].string)
+                
+                //create match object 
+                let match = Match(name: subJSON["username"].string, location: location, age: subJSON["age"].int, image: profileImage)
+             
+                self.matchesArray.append(match)
+            }
+            self.collectionView?.reloadData()
+        }
     }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }

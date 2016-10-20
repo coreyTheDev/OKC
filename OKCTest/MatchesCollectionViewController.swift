@@ -12,7 +12,7 @@ import SwiftyJSON
 
 private let reuseIdentifier = "MatchesCollectionViewCell"
 private let margin = 13.0
-private let cellAspectRatio = CGFloat(515.0/333.0)
+private let cellAspectRatio = CGFloat(388.0/333.0)
 
 struct Image {
     var originalURL:String?
@@ -71,7 +71,10 @@ class MatchesCollectionViewController: UICollectionViewController, UICollectionV
     //MARK: UICollectionViewFlowLayout Methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let widthofCell = (collectionView.frame.size.width - CGFloat(3 * margin))/2
-        let heightOfCell = cellAspectRatio * widthofCell
+        //determine height of image given width of cell and add constant value for labels
+        let heightOfImage = cellAspectRatio * widthofCell
+        
+        let heightOfCell = heightOfImage + 100.0
         return CGSize(width: widthofCell, height: heightOfCell)
     }
 

@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Kingfisher
 
 private let reuseIdentifier = "MatchesCollectionViewCell"
 private let margin = 13.0
@@ -32,7 +33,7 @@ struct Match {
     var location:Location?
     var age:Int?
     var image:Image?
-    
+    var percentageMatch:Int?
 }
 
 class MatchesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -61,11 +62,21 @@ class MatchesCollectionViewController: UICollectionViewController, UICollectionV
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let profileCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MatchesCollectionViewCell
     
         // Configure the cell
-    
-        return cell
+        let profileForCell = matchesArray[indexPath.row]
+        
+        let url = URL(string: profileForCell.image!.largeURL!)
+        profileCell.profileImageView.kf.setImage(with: url)
+        
+        profileCell.usernameLabel.text = profileForCell.name!
+        
+        let dotChar = "\u{F9}"
+        profileCell.locationLabel.text = "\(profileForCell.age!) \(dotChar) \(profileForCell.location!.cityName!), \(profileForCell.location!.countryCode!)"
+        profileCell.percentageLabel.text = "\(profileForCell.percentageMatch!)% Match"
+        
+        return profileCell
     }
     
     //MARK: UICollectionViewFlowLayout Methods
@@ -98,8 +109,12 @@ class MatchesCollectionViewController: UICollectionViewController, UICollectionV
                 let locationJSON = subJSON["location"]
                 let location = Location(countryName: locationJSON["country_name"].string, countryCode: locationJSON["country_code"].string, cityName: locationJSON["city_name"].string, stateName: locationJSON["state_name"].string, stateCode: locationJSON["state_code"].string)
                 
+                //grab match
+                let matchValue:Int = subJSON["match"].int!
+                let matchPercentage = matchValue/100
+                
                 //create match object 
-                let match = Match(name: subJSON["username"].string, location: location, age: subJSON["age"].int, image: profileImage)
+                let match = Match(name: subJSON["username"].string, location: location, age: subJSON["age"].int, image: profileImage, percentageMatch: matchPercentage)
              
                 self.matchesArray.append(match)
             }

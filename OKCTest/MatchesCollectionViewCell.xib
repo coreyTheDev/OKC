@@ -76,6 +76,12 @@
                 <constraint firstItem="Ycl-UI-813" firstAttribute="top" secondItem="EB8-dA-pqW" secondAttribute="bottom" id="yyH-Bs-g7X"/>
             </constraints>
             <size key="customSize" width="141" height="174"/>
+            <connections>
+                <outlet property="locationLabel" destination="sRf-lO-8ub" id="VHj-Fp-7iC"/>
+                <outlet property="percentageLabel" destination="Vhk-Gw-uBj" id="fCH-Vs-dY2"/>
+                <outlet property="profileImageView" destination="EB8-dA-pqW" id="Xw1-YE-qeR"/>
+                <outlet property="usernameLabel" destination="QfH-yx-4A6" id="Qvc-LQ-Ogy"/>
+            </connections>
             <point key="canvasLocation" x="143" y="115"/>
         </collectionViewCell>
     </objects>

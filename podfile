@@ -7,6 +7,6 @@ target ‘OKCTest’ do
   # Comment this line if you're not using Swift and don't want to use dynamic 
 pod 'Alamofire','~> 4.0.1'
 pod 'SwiftyJSON'
-
+pod ‘Kingfisher’
 
 end

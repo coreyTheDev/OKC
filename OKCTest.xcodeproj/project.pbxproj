@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04763CA11F34F26900E8B6B9 /* OKMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04763CA01F34F26900E8B6B9 /* OKMatch.swift */; };
+		04763CA41F3513FB00E8B6B9 /* OKMatchSearchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04763CA31F3513FB00E8B6B9 /* OKMatchSearchCellViewModel.swift */; };
 		4D49F4AA37676F5FE70D7F96 /* Pods_OKCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF7C074BD08AB5D685D13D6 /* Pods_OKCTest.framework */; };
 		7AD4BD011DB94CAB00CAA7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4BD001DB94CAB00CAA7BA /* AppDelegate.swift */; };
 		7AD4BD061DB94CAB00CAA7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4BD041DB94CAB00CAA7BA /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04763CA01F34F26900E8B6B9 /* OKMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKMatch.swift; sourceTree = "<group>"; };
+		04763CA31F3513FB00E8B6B9 /* OKMatchSearchCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKMatchSearchCellViewModel.swift; sourceTree = "<group>"; };
 		3AF7C074BD08AB5D685D13D6 /* Pods_OKCTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OKCTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58350396F03A52B90705BD79 /* Pods-OKCTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OKCTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OKCTest/Pods-OKCTest.debug.xcconfig"; sourceTree = "<group>"; };
 		7AD4BCFD1DB94CAB00CAA7BA /* OKCTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OKCTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +48,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04763C9F1F34F24800E8B6B9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				04763CA01F34F26900E8B6B9 /* OKMatch.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		04763CA21F3513EC00E8B6B9 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				04763CA31F3513FB00E8B6B9 /* OKMatchSearchCellViewModel.swift */,
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
 		46A7D82AAEA51E585A8BAD90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +97,8 @@
 				7AD4BD121DB94FB100CAA7BA /* MatchesCollectionViewController.swift */,
 				7AD4BD141DB94FFF00CAA7BA /* MatchesCollectionViewCell.swift */,
 				7AD4BD151DB94FFF00CAA7BA /* MatchesCollectionViewCell.xib */,
+				04763CA21F3513EC00E8B6B9 /* View Models */,
+				04763C9F1F34F24800E8B6B9 /* Models */,
 				7AD4BD041DB94CAB00CAA7BA /* Main.storyboard */,
 				7AD4BD071DB94CAB00CAA7BA /* Assets.xcassets */,
 				7AD4BD091DB94CAB00CAA7BA /* LaunchScreen.storyboard */,
@@ -129,7 +151,7 @@
 				TargetAttributes = {
 					7AD4BCFC1DB94CAB00CAA7BA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = PND8ZPJHLJ;
+						DevelopmentTeam = 886ZPWDXTP;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -179,7 +201,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8DFB3947EE6AC61EEE3AE8D4 /* [CP] Embed Pods Frameworks */ = {
@@ -222,6 +244,8 @@
 				7AD4BD131DB94FB100CAA7BA /* MatchesCollectionViewController.swift in Sources */,
 				7AD4BD161DB94FFF00CAA7BA /* MatchesCollectionViewCell.swift in Sources */,
 				7AD4BD011DB94CAB00CAA7BA /* AppDelegate.swift in Sources */,
+				04763CA41F3513FB00E8B6B9 /* OKMatchSearchCellViewModel.swift in Sources */,
+				04763CA11F34F26900E8B6B9 /* OKMatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +367,7 @@
 			baseConfigurationReference = 58350396F03A52B90705BD79 /* Pods-OKCTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PND8ZPJHLJ;
+				DEVELOPMENT_TEAM = 886ZPWDXTP;
 				INFOPLIST_FILE = OKCTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = coreyTheDev.OKCTest;
@@ -357,7 +381,7 @@
 			baseConfigurationReference = EA09FAB221FFFA1E1A2F3725 /* Pods-OKCTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PND8ZPJHLJ;
+				DEVELOPMENT_TEAM = 886ZPWDXTP;
 				INFOPLIST_FILE = OKCTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = coreyTheDev.OKCTest;

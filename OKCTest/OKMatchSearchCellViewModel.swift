@@ -8,8 +8,18 @@
 
 import Foundation
 
+fileprivate let dotChar = "\u{2022}"
+
 struct OKMatchSearchCellViewModel {
-    let usernameString: NSAttributedString
-    let ageAndLocationString: NSAttributedString
-    let percentageString: NSAttributedString
+    let usernameString: String
+    let ageAndLocationString: String
+    let percentageString: String
+    let profileImageURL: URL?
+    
+    init(with match: OKMatch) {
+        usernameString = match.name
+        ageAndLocationString = "\(match.age) \(dotChar) \(match.location.cityName), \(match.location.countryCode)"
+        percentageString = "\(match.percentageMatch / 1000)% Match"
+        profileImageURL = URL(string: match.image.mediumURL)
+    }
 }

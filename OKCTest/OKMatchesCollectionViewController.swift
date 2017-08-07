@@ -1,5 +1,5 @@
 //
-//  MatchesCollectionViewController.swift
+//  OKMatchesCollectionViewController.swift
 //  OKCTest
 //
 //  Created by Corey Zanotti on 10/20/16.
@@ -17,13 +17,13 @@ private let cellAspectRatio = CGFloat(388.0/333.0)
 
 
 
-class MatchesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class OKMatchesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var matchesArray:[OKMatch] = [OKMatch]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.collectionView?.register(UINib(nibName:"MatchesCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView?.register(UINib(nibName:"OKMatchesCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
         
         self.title = "Browse"
         let textColorDictionary: NSDictionary = [NSForegroundColorAttributeName: UIColor.white]
@@ -49,15 +49,6 @@ class MatchesCollectionViewController: UICollectionViewController, UICollectionV
     
         // Configure the cell
         let profileForCell = matchesArray[indexPath.row]
-        
-        let url = URL(string: profileForCell.image!.largeURL!)
-        profileCell.profileImageView.kf.setImage(with: url)
-        
-        profileCell.usernameLabel.text = profileForCell.name!
-        
-        let dotChar = "\u{2022}"
-        profileCell.locationLabel.text = "\(profileForCell.age!) \(dotChar) \(profileForCell.location!.cityName!), \(profileForCell.location!.countryCode!)"
-        profileCell.percentageLabel.text = "\(profileForCell.percentageMatch!)% Match"
         
         return profileCell
     }

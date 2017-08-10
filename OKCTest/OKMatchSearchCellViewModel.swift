@@ -19,7 +19,7 @@ struct OKMatchSearchCellViewModel {
     init(with match: OKMatch) {
         usernameString = match.name
         ageAndLocationString = "\(match.age) \(dotChar) \(match.location.cityName), \(match.location.countryCode)"
-        percentageString = "\(match.percentageMatch / 1000)% Match"
+        percentageString = "\(match.percentageMatch / 100)% Match"
         profileImageURL = URL(string: match.image.mediumURL)
     }
 }

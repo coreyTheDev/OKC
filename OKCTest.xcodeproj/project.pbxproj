@@ -16,8 +16,8 @@
 		7AD4BD081DB94CAB00CAA7BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4BD071DB94CAB00CAA7BA /* Assets.xcassets */; };
 		7AD4BD0B1DB94CAB00CAA7BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4BD091DB94CAB00CAA7BA /* LaunchScreen.storyboard */; };
 		7AD4BD131DB94FB100CAA7BA /* OKMatchesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4BD121DB94FB100CAA7BA /* OKMatchesCollectionViewController.swift */; };
-		7AD4BD161DB94FFF00CAA7BA /* OKMatchesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4BD141DB94FFF00CAA7BA /* OKMatchesCollectionViewCell.swift */; };
-		7AD4BD171DB94FFF00CAA7BA /* OKMatchesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4BD151DB94FFF00CAA7BA /* OKMatchesCollectionViewCell.xib */; };
+		7AD4BD161DB94FFF00CAA7BA /* OKMatchSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4BD141DB94FFF00CAA7BA /* OKMatchSearchCell.swift */; };
+		7AD4BD171DB94FFF00CAA7BA /* OKMatchSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4BD151DB94FFF00CAA7BA /* OKMatchSearchCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +33,8 @@
 		7AD4BD0A1DB94CAB00CAA7BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AD4BD0C1DB94CAB00CAA7BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AD4BD121DB94FB100CAA7BA /* OKMatchesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKMatchesCollectionViewController.swift; sourceTree = "<group>"; };
-		7AD4BD141DB94FFF00CAA7BA /* OKMatchesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKMatchesCollectionViewCell.swift; sourceTree = "<group>"; };
-		7AD4BD151DB94FFF00CAA7BA /* OKMatchesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OKMatchesCollectionViewCell.xib; sourceTree = "<group>"; };
+		7AD4BD141DB94FFF00CAA7BA /* OKMatchSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKMatchSearchCell.swift; sourceTree = "<group>"; };
+		7AD4BD151DB94FFF00CAA7BA /* OKMatchSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OKMatchSearchCell.xib; sourceTree = "<group>"; };
 		EA09FAB221FFFA1E1A2F3725 /* Pods-OKCTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OKCTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-OKCTest/Pods-OKCTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,8 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				7AD4BD121DB94FB100CAA7BA /* OKMatchesCollectionViewController.swift */,
-				7AD4BD141DB94FFF00CAA7BA /* OKMatchesCollectionViewCell.swift */,
-				7AD4BD151DB94FFF00CAA7BA /* OKMatchesCollectionViewCell.xib */,
+				7AD4BD141DB94FFF00CAA7BA /* OKMatchSearchCell.swift */,
+				7AD4BD151DB94FFF00CAA7BA /* OKMatchSearchCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -192,7 +192,7 @@
 			files = (
 				7AD4BD0B1DB94CAB00CAA7BA /* LaunchScreen.storyboard in Resources */,
 				7AD4BD081DB94CAB00CAA7BA /* Assets.xcassets in Resources */,
-				7AD4BD171DB94FFF00CAA7BA /* OKMatchesCollectionViewCell.xib in Resources */,
+				7AD4BD171DB94FFF00CAA7BA /* OKMatchSearchCell.xib in Resources */,
 				7AD4BD061DB94CAB00CAA7BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,7 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AD4BD131DB94FB100CAA7BA /* OKMatchesCollectionViewController.swift in Sources */,
-				7AD4BD161DB94FFF00CAA7BA /* OKMatchesCollectionViewCell.swift in Sources */,
+				7AD4BD161DB94FFF00CAA7BA /* OKMatchSearchCell.swift in Sources */,
 				04763CA71F39229300E8B6B9 /* OKMatchSearchViewModel.swift in Sources */,
 				7AD4BD011DB94CAB00CAA7BA /* AppDelegate.swift in Sources */,
 				04763CA41F3513FB00E8B6B9 /* OKMatchSearchCellViewModel.swift in Sources */,

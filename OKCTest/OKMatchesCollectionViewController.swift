@@ -7,32 +7,43 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
-import Kingfisher
 
-private let reuseIdentifier = "MatchesCollectionViewCell"
+
 private let margin = 13.0
 private let cellAspectRatio = CGFloat(388.0/333.0)
 
-
+let kResultsFetchCompleted = "kResultsFetchCompleted"
 
 class OKMatchesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    var matchesArray:[OKMatch] = [OKMatch]()
+    //var matchesArray:[OKMatch] = [OKMatch]()
+    
+    let matchSearchViewModel = OKMatchSearchViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+        setupNotifications()
+    }
 
-        self.collectionView?.register(UINib(nibName:"OKMatchesCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
-        
+    // MARK: setup
+    
+    fileprivate func setupUI() {
         self.title = "Browse"
         let textColorDictionary: NSDictionary = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.titleTextAttributes = textColorDictionary as? [String : Any]
-        
-        self.getMatches()
+        self.collectionView?.register(UINib(nibName:"OKMatchSearchCell", bundle: Bundle.main), forCellWithReuseIdentifier: kMatchSearchCellReuseIdentifier)
+    }
+    
+    fileprivate func setupNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(resultsUpdated), name: NSNotification.Name(kResultsFetchCompleted), object: nil)
     }
 
-
+    // MARK: Notification handling
+    
+    @objc fileprivate func resultsUpdated() {
+        collectionView?.reloadData()
+    }
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -41,16 +52,16 @@ class OKMatchesCollectionViewController: UICollectionViewController, UICollectio
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.matchesArray.count
+        return self.matchSearchViewModel.numberOfRows()
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let profileCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MatchesCollectionViewCell
-    
-        // Configure the cell
-        let profileForCell = matchesArray[indexPath.row]
+        guard let matchCell = collectionView.dequeueReusableCell(withReuseIdentifier: kMatchSearchCellReuseIdentifier, for: indexPath) as? OKMatchSearchCell else {
+            return UICollectionViewCell()
+        }
         
-        return profileCell
+        matchCell.viewModel = matchSearchViewModel.modelForCell(at: indexPath)
+        return matchCell
     }
     
     //MARK: UICollectionViewFlowLayout Methods
@@ -63,23 +74,5 @@ class OKMatchesCollectionViewController: UICollectionViewController, UICollectio
         return CGSize(width: widthofCell, height: heightOfCell)
     }
 
-    //MARK: Networking methods
-    func getMatches(){
-        
-        let matchURLString = "https://www.okcupid.com/matchSample.json"
-        
-        Alamofire.request(matchURLString).responseJSON { response in
-
-            let jsonData = JSON(response.result.value)
-            let responseJSONArray = jsonData["data"]
-            
-            for (_, subJSON): (String, JSON) in responseJSONArray {
-                
-                if let match = OKMatch(with: subJSON) {
-                    self.matchesArray.append(match)
-                }
-            }
-            self.collectionView?.reloadData()
-        }
-    }
+    
 }

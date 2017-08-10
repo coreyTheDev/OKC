@@ -8,7 +8,9 @@
 
 import UIKit
 
-class OKMatchesCollectionViewCell: UICollectionViewCell {
+let kMatchSearchCellReuseIdentifier = "OKMatchSearchCell"
+
+class OKMatchSearchCell: UICollectionViewCell {
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!

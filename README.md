@@ -13,3 +13,6 @@ Build and run the project from XCode.
 
 # Build Notes
 You will need to specify a Team to build the project. Go to Targets->OKCTest->General->Signing and specify your development team from the drop down menu. 
+
+# Next Steps in MVVM refactor
+Rx integration, Paging, Sorting

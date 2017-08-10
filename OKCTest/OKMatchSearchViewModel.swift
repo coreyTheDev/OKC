@@ -15,7 +15,6 @@ fileprivate let kMatchSearchEndpoint = "https://www.okcupid.com/matchSample.json
 
 class OKMatchSearchViewModel {
     var searchResults: [OKMatchSearchCellViewModel]
-    // paging
     
     init() {
         searchResults = [OKMatchSearchCellViewModel]()

@@ -22,16 +22,21 @@ class OKMatchesCollectionViewController: UICollectionViewController, UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupCollectionView()
         setupNotifications()
     }
 
-    // MARK: setup
+    // MARK: Setup
     
     fileprivate func setupUI() {
-        self.title = "Browse"
+        title = "Browse"
         let textColorDictionary: NSDictionary = [NSForegroundColorAttributeName: UIColor.white]
-        self.navigationController?.navigationBar.titleTextAttributes = textColorDictionary as? [String : Any]
-        self.collectionView?.register(UINib(nibName:"OKMatchSearchCell", bundle: Bundle.main), forCellWithReuseIdentifier: kMatchSearchCellReuseIdentifier)
+        navigationController?.navigationBar.titleTextAttributes = textColorDictionary as? [String : Any]
+    }
+    
+    fileprivate func setupCollectionView() {
+        collectionView?.backgroundColor = UIColor(red: 235/255, green: 237/255, blue: 242/255, alpha: 1.0)
+        collectionView?.register(UINib(nibName:"OKMatchSearchCell", bundle: Bundle.main), forCellWithReuseIdentifier: kMatchSearchCellReuseIdentifier)
     }
     
     fileprivate func setupNotifications() {
@@ -50,7 +55,6 @@ class OKMatchesCollectionViewController: UICollectionViewController, UICollectio
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.matchSearchViewModel.numberOfRows()
     }
@@ -64,13 +68,12 @@ class OKMatchesCollectionViewController: UICollectionViewController, UICollectio
         return matchCell
     }
     
-    //MARK: UICollectionViewFlowLayout Methods
+    //MARK: UICollectionViewFlowLayout
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let widthofCell = (collectionView.frame.size.width - CGFloat(3 * margin))/2
-        //determine height of image given width of cell and add constant value for labels
         let heightOfImage = cellAspectRatio * widthofCell
-        
-        let heightOfCell = heightOfImage + 100.0
+        let heightOfCell = heightOfImage + kMatchSearchContentViewSize
         return CGSize(width: widthofCell, height: heightOfCell)
     }
 

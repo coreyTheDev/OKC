@@ -9,6 +9,8 @@
 import UIKit
 
 let kMatchSearchCellReuseIdentifier = "OKMatchSearchCell"
+let kMatchSearchContentViewSize = CGFloat(95.0)
+fileprivate let kCellCornerRadius = CGFloat(3.0)
 
 class OKMatchSearchCell: UICollectionViewCell {
     
@@ -26,18 +28,30 @@ class OKMatchSearchCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         styleUI()
+        setupLayer()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: kCellCornerRadius).cgPath
     }
     
     //MARK: - Configuration
     
     fileprivate func styleUI() {
-        layer.borderWidth = 1.0
-        layer.cornerRadius = 3.0
-        layer.borderColor = UIColor.lightGray.cgColor
-        
         usernameLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 14.0)
         locationLabel.font = UIFont(name: "HelveticaNeue", size: 12.0)
         percentageLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 13.0)
+    }
+    
+    fileprivate func setupLayer() {
+        contentView.clipsToBounds = true
+        contentView.layer.cornerRadius = kCellCornerRadius
+        
+        layer.shadowColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0).cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 1)
+        layer.shadowOpacity = 0.2
+        layer.shadowRadius = kCellCornerRadius
     }
     
     fileprivate func fillUI() {
@@ -48,7 +62,6 @@ class OKMatchSearchCell: UICollectionViewCell {
         if let profileURL = viewModel.profileImageURL {
             profileImageView.kf.setImage(with: profileURL)
         }
-        
         usernameLabel.text = viewModel.usernameString
         locationLabel.text = viewModel.ageAndLocationString
         percentageLabel.text = viewModel.percentageString

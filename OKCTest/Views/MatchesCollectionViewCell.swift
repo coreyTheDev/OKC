@@ -22,4 +22,17 @@ class MatchesCollectionViewCell: UICollectionViewCell {
         self.layer.borderColor = UIColor.lightGray.cgColor
     }
 
+    // MARK: - Public
+    
+    func configure(with match: Match) {
+        let url = URL(string: match.image!.largeURL!)
+        profileImageView.kf.setImage(with: url)
+        
+        usernameLabel.text = match.name!
+        
+        let dotChar = "\u{2022}"
+        locationLabel.text = "\(match.age!) \(dotChar) \(match.location!.cityName!), \(match.location!.countryCode!)"
+        percentageLabel.text = "\(match.percentageMatch!)% Match"
+    }
+    
 }
